@@ -4,14 +4,8 @@
     <OutputType>Exe</OutputType>
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
+    <Nullable>disable</Nullable>
   </PropertyGroup>
-
-  <ItemGroup>
-    <Compile Remove="Results\NewFolder\**" />
-    <EmbeddedResource Remove="Results\NewFolder\**" />
-    <None Remove="Results\NewFolder\**" />
-  </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Algo\Algo.csproj" />
@@ -20,5 +14,10 @@
     <ItemGroup>
 		<PackageReference Include="BenchmarkDotNet" Version="0.13.12" />
 	</ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Results\1 - Duplicate in string\" />
+      <Folder Include="Results\2 - Long palindrome\" />
+    </ItemGroup>
 
 </Project>

@@ -1,9 +1,4 @@
-﻿using BenchmarkDotNet.Configs;
-using BenchmarkDotNet.Diagnosers;
-using BenchmarkDotNet.Exporters;
-using BenchmarkDotNet.Running;
-
-namespace Algo.Benchmarks;
+﻿namespace Algo.Benchmarks;
 
 internal class Program
 {
@@ -17,6 +12,6 @@ internal class Program
             .AddExporter(MarkdownExporter.Default)
             .AddDiagnoser(MemoryDiagnoser.Default);
 
-        var summary = BenchmarkRunner.Run<DuplicateInStringBenchmarks>(configFactory());
+        var summary = BenchmarkRunner.Run<LongPalindromeBenchmarks>(configFactory());
     }
 }

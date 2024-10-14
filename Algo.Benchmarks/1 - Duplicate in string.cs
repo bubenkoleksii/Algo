@@ -1,39 +1,27 @@
-﻿using Algo.Solvers;
-using BenchmarkDotNet.Attributes;
-
-namespace Algo.Benchmarks;
+﻿namespace Algo.Benchmarks;
 
 [MemoryDiagnoser]
-[LongRunJob]
+[Orderer(SummaryOrderPolicy.SlowestToFastest)]
+[RankColumn]
+[GroupBenchmarksBy(BenchmarkLogicalGroupRule.ByParams)]
 public class DuplicateInStringBenchmarks
 {
+    public string[] Params =>
+    [
+        "abcdefghij",
+        "hellohe",
+        "aabbccddeeffgghhiijj",
+        "aabb",
+        "abcde" + new string('f', 994)
+    ];
+
+    [ParamsSource(nameof(Params))]
+    public string Input;
+
     [Benchmark]
     public char GetFirstDuplicateLetter_SimpleLoops()
     {
-        char result = char.MinValue;
-
-         List<string> testStrings =
-         [
-            "ab",
-            "abcdefghij",
-            "klmnopqrst",
-            "uvwxyz",
-            "hellohe",
-            "character",
-            "randomletters",
-            "aabbccddeeffgghhiijj",
-            "longerdoubleletter",
-            "thisisaverylongstringthatexceedstwentycharacters",
-            "uniquecharsarefun",
-            "xyzxyzxyzxyzxyzxyzxyzxyzxyzxyzxyzxyz",
-            "aabb",
-            "abcde" + new string('f', 85)
-         ];
-
-        foreach (var s in testStrings)
-        {
-            result = StringDuplicateSolver.GetFirstDuplicateLetter_SimpleLoops(s);
-        }
+        var result = StringDuplicateSolver.GetFirstDuplicateLetter_SimpleLoops(Input);
 
         return result;
     }
@@ -41,30 +29,7 @@ public class DuplicateInStringBenchmarks
     [Benchmark]
     public char GetFirstDuplicateLetter_ArrayWithCounts()
     {
-        char result = char.MinValue;
-
-        List<string> testStrings =
-        [
-           "ab",
-            "abcdefghij",
-            "klmnopqrst",
-            "uvwxyz",
-            "hellohe",
-            "character",
-            "randomletters",
-            "aabbccddeeffgghhiijj",
-            "longerdoubleletter",
-            "thisisaverylongstringthatexceedstwentycharacters",
-            "uniquecharsarefun",
-            "xyzxyzxyzxyzxyzxyzxyzxyzxyzxyzxyzxyz",
-            "aabb",
-            "abcde" + new string('f', 85)
-        ];
-
-        foreach (var s in testStrings)
-        {
-            result = StringDuplicateSolver.GetFirstDuplicateLetter_ArrayWithCounts(s);
-        }
+        var result = StringDuplicateSolver.GetFirstDuplicateLetter_ArrayWithCounts(Input);
 
         return result;
     }
@@ -72,30 +37,7 @@ public class DuplicateInStringBenchmarks
     [Benchmark]
     public char GetFirstDuplicateLetter_HashSets()
     {
-        char result = char.MinValue;
-
-        List<string> testStrings =
-        [
-           "ab",
-            "abcdefghij",
-            "klmnopqrst",
-            "uvwxyz",
-            "hellohe",
-            "character",
-            "randomletters",
-            "aabbccddeeffgghhiijj",
-            "longerdoubleletter",
-            "thisisaverylongstringthatexceedstwentycharacters",
-            "uniquecharsarefun",
-            "xyzxyzxyzxyzxyzxyzxyzxyzxyzxyzxyzxyz",
-            "aabb",
-            "abcde" + new string('f', 85)
-        ];
-
-        foreach (var s in testStrings)
-        {
-            result = StringDuplicateSolver.GetFirstDuplicateLetter_HashSets(s);
-        }
+        var result = StringDuplicateSolver.GetFirstDuplicateLetter_HashSets(Input);
 
         return result;
     }
