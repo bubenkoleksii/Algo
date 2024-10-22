@@ -1,5 +1,6 @@
 ﻿namespace Algo.Benchmarks;
 
+[LongRunJob]
 [MemoryDiagnoser]
 [Orderer(SummaryOrderPolicy.SlowestToFastest)]
 [RankColumn]

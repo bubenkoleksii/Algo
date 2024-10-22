@@ -1,4 +1,4 @@
-﻿namespace Algo.Tests;
+﻿namespace Algo.Tests.Senior;
 
 public class StringDuplicateSeniorSolverTests
 {

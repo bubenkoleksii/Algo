@@ -6,7 +6,7 @@ public static class LongPalindromeSolver
 {
     // Time complexity: O(n), where n is digit numbers
     // Space complexity: O(1)
-    public static bool Division(long number)
+    public static bool Division(ulong number)
     {
         if (number < 0)
             return false;
@@ -31,7 +31,7 @@ public static class LongPalindromeSolver
 
         return true;
 
-        static int CountDigits(long num)
+        static int CountDigits(ulong num)
         {
             if (num == 0)
             {
@@ -48,9 +48,9 @@ public static class LongPalindromeSolver
             return digits;
         }
 
-        static long CalculateInitialFirstNumberDivider(int digits)
+        static ulong CalculateInitialFirstNumberDivider(int digits)
         {
-            long divider = 1;
+            ulong divider = 1;
             for (int i = 0; i < digits - 1; i++)
             {
                 divider *= 10;
@@ -61,7 +61,7 @@ public static class LongPalindromeSolver
 
     // Time complexity: O(n)
     // Space complexity: O(n)
-    public static bool DivideStrings(long number)
+    public static bool DivideStrings(ulong number)
     {
         if (number < 0)
             return false;
@@ -79,7 +79,7 @@ public static class LongPalindromeSolver
 
         return firstHalf == secondHalf;
 
-        static int CountDigits(long num)
+        static int CountDigits(ulong num)
         {
             if (num == 0)
             {
@@ -99,7 +99,7 @@ public static class LongPalindromeSolver
 
     // Time complexity: O(n)
     // Space complexity: O(1)
-    public static bool ReverseNumber(long number)
+    public static bool ReverseNumber(ulong number)
     {
         if (number < 0)
             return false;
@@ -109,7 +109,7 @@ public static class LongPalindromeSolver
 
         var inputNumber = number;
 
-        var reversedNumber = 0L;
+        var reversedNumber = 0UL;
         while (number > 0)
         {
             reversedNumber = reversedNumber * 10 + number % 10;
