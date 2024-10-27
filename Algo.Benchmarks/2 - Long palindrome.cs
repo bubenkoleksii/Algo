@@ -5,6 +5,8 @@
 [Orderer(SummaryOrderPolicy.SlowestToFastest)]
 [RankColumn]
 [GroupBenchmarksBy(BenchmarkLogicalGroupRule.ByParams)]
+[MarkdownExporter]
+[HideColumns("Error", "StdDev", "Median", "Gen0")]
 public class LongPalindromeBenchmarks
 {
     public ulong[] Params =>
