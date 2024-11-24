@@ -18,6 +18,9 @@
     <ItemGroup>
       <Folder Include="Results\1 - Duplicate in string\" />
       <Folder Include="Results\2 - Long palindrome\" />
+      <Folder Include="Results\3 - Round brackets\" />
+      <Folder Include="Results\4 - Repeated characters\" />
+      <Folder Include="Results\5 - Failing rocks\" />
     </ItemGroup>
 
 </Project>
