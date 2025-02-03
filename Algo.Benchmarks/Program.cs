@@ -12,6 +12,6 @@ internal class Program
             .AddExporter(MarkdownExporter.Default)
             .AddDiagnoser(MemoryDiagnoser.Default);
 
-        var summary = BenchmarkRunner.Run<FallingRocksBenchmarks>(configFactory());
+        var summary = BenchmarkRunner.Run<PangramBenchmarks>(configFactory());
     }
 }
